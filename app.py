@@ -90,8 +90,7 @@ btn_predict = st.sidebar.button("Realizar Predição")
 
 # verifica se o botão foi acionado
 if btn_predict:
-    #data_teste = pd.DataFrame()
-    data_teste = pd.dataset()
+    data_teste = pd.DataFrame()
 
     data_teste["gender"] =	[gender]
     data_teste["race_ethnicity"] =	[race_ethnicity]    
@@ -111,5 +110,7 @@ if btn_predict:
     result = "R$ "+str(round(result[0],2))
     
     st.write(result)
+    
+
 
 

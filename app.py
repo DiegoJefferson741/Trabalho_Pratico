@@ -12,7 +12,7 @@ dataset = pd.read_csv('StudentsPerformace.csv')
 
 
 # título
-st.title("Data App - Predição de Valores")
+st.title("Data App - Predição de Notas")
 
 # subtítulo
 st.markdown("Este é um Data App utilizado para exibir a solução de Machine Learning para o problema de predição de notas.")

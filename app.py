@@ -5,7 +5,7 @@ import joblib
 # loading the trained model.
 model = joblib.load('modelo-final-RF.pkl')
 # carregando uma amostra dos dados.
-dataset = pd.read_csv('StudantsPerformance.csv') 
+dataset = pd.read_csv('students_performance.csv') 
 
 
 # título

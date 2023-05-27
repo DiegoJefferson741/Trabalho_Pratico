@@ -44,7 +44,6 @@ race_ethnicity  = st.sidebar.selectbox("Etinia",(
                             )
                         )
 
-
 if race_ethnicity== "group A":
     race_ethnicity = 1
 if race_ethnicity == "group B":
@@ -64,7 +63,6 @@ parental_level = st.sidebar.selectbox("Estudo",(
                             ,"high school"
                             )
                         )
-
 
 if parental_level== "bachelor degree":
     parental_level = 1

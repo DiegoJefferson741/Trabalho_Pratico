@@ -17,7 +17,7 @@ st.sidebar.subheader("Defina os atributos do aluno para predição de notas.")
 # mapeando dados do usuário para cada atributo
 gender = st.sidebar.selectbox("Sexo",("Masculino","Feminino"))
 #race_ethnicity = st.sidebar.selectbox("Etinia",("group A","group B","group C","group D"))
-#parental_level= st.sidebar.selectbox("Estudo",("bachelor degree","some college","master degree","associate degree","high school"))
+#parental_level_education = st.sidebar.selectbox("Estudo",("bachelor degree","some college","master degree","associate degree","high school"))
 lunch = st.sidebar.selectbox("Almoco",("standard","free/reduced"))
 test_preparation_course = st.sidebar.selectbox("Teste Preparatorio",("none","completed"))
 
@@ -38,7 +38,7 @@ race_ethnicity = st.sidebar.selectbox("Etinia",(
                             ,"group D"
                             )
                         )
-if race_ethnicity== "group A":
+if race_ethnicity == "group A":
     race_ethnicity = 1
 if race_ethnicity == "group B":
     race_ethnicity = 2
@@ -49,7 +49,7 @@ if race_ethnicity == "group D":
     
 ### ---------------------- parental_level -------------------
 
-parental_level = st.sidebar.selectbox("Estudo",(
+parental_level_education = st.sidebar.selectbox("Estudo",(
                             "bachelor degree"
                             ,"some college"
                             ,"master degree"
@@ -57,28 +57,25 @@ parental_level = st.sidebar.selectbox("Estudo",(
                             ,"high school"
                             )
                         )
-if parental_level== "bachelor degree":
-    parental_level = 1
-if parental_level == "some college":
-    parental_level = 2
-if parental_level == "some college":
-    rparental_level = 3
-if parental_level == "associate degree":
-    parental_level = 4
-if parental_level == "high school":
-    parental_level = 5
+if parental_level_education == "bachelor degree":
+    parental_level_education = 1
+if parental_level_education == "some college":
+    parental_level_education = 2
+if parental_level_education == "some college":
+    parental_level_education = 3
+if parental_level_education == "associate degree":
+    parental_level_education = 4
+if parental_level_education == "high school":
+    parental_level_education = 5
     
 ### ---------------------- lunch -------------------    
-
 lunch = 1 if lunch == "standard" else 0
 
-
 ### ---------------------- test_preparation_course -------------------  
-
 test_preparation_course = 1 if test_preparation_course == "none" else 0
 
 
-#Botao de Prediçao
+#### Botao de Prediçao  ####
 btn_predict = st.sidebar.button("Realizar Predição")
 
 # verifica se o botão foi acionado
@@ -87,11 +84,11 @@ if btn_predict:
 
     data_teste["gender"] =	[gender]
     data_teste["race_ethnicity"] =	[race_ethnicity]    
-    data_teste["parental level"] = [parental_level]
+    data_teste["parental_level_education"] = [parental_level_education]
     data_teste["lunch"] = [lunch]	
-    data_teste["test preparation course"] = [test_preparation_course]
-    data_teste["reading score"] = [reading_score]
-    data_teste["writing score"] = [writing_score]
+    data_teste["test_preparation_course"] = [test_preparation_course]
+    data_teste["reading_score"] = [reading_score]
+    data_teste["writing_score"] = [writing_score]
 
     #imprime os dados de teste    
     print(data_teste)

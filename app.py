@@ -90,7 +90,8 @@ btn_predict = st.sidebar.button("Realizar Predição")
 
 # verifica se o botão foi acionado
 if btn_predict:
-    data_teste = pd.DataFrame()
+    #data_teste = pd.DataFrame()
+    data_teste = pd.dataset()
 
     data_teste["gender"] =	[gender]
     data_teste["race_ethnicity"] =	[race_ethnicity]    

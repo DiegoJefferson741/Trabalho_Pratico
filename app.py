@@ -15,23 +15,10 @@ dataset = pd.read_csv('StudentsPerformace.csv')
 st.title("Data App - Predição de Valores")
 
 # subtítulo
-st.markdown("Este é um Data App utilizado para exibir a solução de Machine Learning para o problema de predição de valores alugueis de imóveis.")
+st.markdown("Este é um Data App utilizado para exibir a solução de Machine Learning para o problema de predição de notas.")
 
+st.sidebar.subheader("Defina os atributos do aluno para predição de notas.")
 
-
-st.sidebar.subheader("Defina os atributos do imóvel para predição do aluguel")
-
-
-# mapeando dados do usuário para cada atributo
-#area = st.sidebar.number_input("Área total", value=dataset["area"].mean())
-#num_quartos = st.sidebar.number_input("Número de Quartos", value=dataset["num_banheiros"].mean())
-#num_banheiros = st.sidebar.number_input("Número de Banheiros", value=dataset["num_banheiros"].mean())
-#vagas_garagem = st.sidebar.number_input("Vagas de Garagem", value=dataset["garagem"].mean())
-#num_andares = st.sidebar.number_input("Número de Andares", value=dataset["num_andares"].mean())
-#aceita_animais = st.sidebar.selectbox("Aceita Animais?",("Sim","Não"))
-#mobilia = st.sidebar.selectbox("Mobiliado?",("Sim","Não"))
-
-###----------------------------------------------------------------------------------------
 # mapeando dados do usuário para cada atributo
 gender = st.sidebar.selectbox("Sexo",("Masculino","Feminino"))
 #race_ethnicity = st.sidebar.selectbox("Etinia",("group A","group B","group C","group D"))
@@ -39,22 +26,16 @@ gender = st.sidebar.selectbox("Sexo",("Masculino","Feminino"))
 lunch= st.sidebar.selectbox("Almoco",("standard","free/reduced"))
 test_preparation_course = st.sidebar.selectbox("Teste Preparatorio",("none","completed"))
 
-
 reading_score = st.sidebar.number_input("Nota leitura")
 writing_score = st.sidebar.number_input("Nota Escrita")
 
 
+### transformando o dado de entrada em valor binário ###
 
-
-
-
-
-
-# transformando o dado de entrada em valor binário
-
+### ---------------------- gender  -------------------
 gender = 0 if gender == "Feminino" else 1
 
-### ----------------------race_ethnicity  -------------------
+### ---------------------- race_ethnicity  -------------------
 race_ethnicity  = st.sidebar.selectbox("Etinia",(
                             "group A"
                             ,"group B"
@@ -73,7 +54,7 @@ if race_ethnicity == "group C":
 if race_ethnicity == "group D":
     race_ethnicity = 4
     
-### ----------------------parental_level -------------------
+### ---------------------- parental_level -------------------
 
 parental_level = st.sidebar.selectbox("Estudo",(
                             "bachelor degree"
@@ -96,24 +77,18 @@ if parental_level == "associate degree":
 if parental_level == "high school":
     parental_level = 5
     
-### ----------------------lunch -------------------    
+### ---------------------- lunch -------------------    
 
 lunch = 1 if lunch == "standard" else 0
 
 
-### ----------------------test_preparation_course -------------------  
+### ---------------------- test_preparation_course -------------------  
 
 test_preparation_course = 1 if test_preparation_course == "none" else 0
 
 
-
-
-
-
 #Botao de Prediçao
 btn_predict = st.sidebar.button("Realizar Predição")
-
-
 
 # verifica se o botão foi acionado
 if btn_predict:
@@ -138,7 +113,4 @@ if btn_predict:
     
     st.write(result)
 
-#no prompt do anaconda, ir no diretorio da api_streamlit : C:\Users\gusta\Meu Drive\Colab Notebooks\DML\api_streamlit>
-
-#rodar o comando: streamlit run app.py
 

@@ -1,29 +1,24 @@
 import pandas as pd
 import streamlit as st
-#from pycaret.regression import *
 import joblib 
 
 # loading the trained model.
 model = joblib.load('modelo-final-RF.pkl')
-
 # carregando uma amostra dos dados.
 dataset = pd.read_csv('StudentsPerformace.csv') 
 #classifier = pickle.load(pickle_in)
 
-
 # título
 st.title("Data App - Predição de Notas")
-
 # subtítulo
 st.markdown("Este é um Data App utilizado para exibir a solução de Machine Learning para o problema de predição de notas.")
-
 st.sidebar.subheader("Defina os atributos do aluno para predição de notas.")
 
 # mapeando dados do usuário para cada atributo
 gender = st.sidebar.selectbox("Sexo",("Masculino","Feminino"))
 #race_ethnicity = st.sidebar.selectbox("Etinia",("group A","group B","group C","group D"))
 #parental_level= st.sidebar.selectbox("Estudo",("bachelor degree","some college","master degree","associate degree","high school"))
-lunch= st.sidebar.selectbox("Almoco",("standard","free/reduced"))
+lunch = st.sidebar.selectbox("Almoco",("standard","free/reduced"))
 test_preparation_course = st.sidebar.selectbox("Teste Preparatorio",("none","completed"))
 
 reading_score = st.sidebar.number_input("Nota leitura")
@@ -36,14 +31,13 @@ writing_score = st.sidebar.number_input("Nota Escrita")
 gender = 0 if gender == "Feminino" else 1
 
 ### ---------------------- race_ethnicity  -------------------
-race_ethnicity  = st.sidebar.selectbox("Etinia",(
+race_ethnicity = st.sidebar.selectbox("Etinia",(
                             "group A"
                             ,"group B"
                             ,"group C"
                             ,"group D"
                             )
                         )
-
 if race_ethnicity== "group A":
     race_ethnicity = 1
 if race_ethnicity == "group B":
@@ -63,7 +57,6 @@ parental_level = st.sidebar.selectbox("Estudo",(
                             ,"high school"
                             )
                         )
-
 if parental_level== "bachelor degree":
     parental_level = 1
 if parental_level == "some college":

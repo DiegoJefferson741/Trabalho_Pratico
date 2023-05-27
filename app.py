@@ -5,7 +5,7 @@ import joblib
 # loading the trained model.
 model = joblib.load('modelo-final-RF.pkl')
 # carregando uma amostra dos dados.
-dataset = pd.read_csv('StudentsPerformace.csv') 
+dataset = pd.read_csv('StudantsPerformance.csv') 
 #classifier = pickle.load(pickle_in)
 
 # título

@@ -7,7 +7,7 @@ import joblib
 model = joblib.load('modelo-final-RF.pkl')
 
 # carregando uma amostra dos dados.
-dataset = pd.read_csv('StudentsPerformace.CSV') 
+dataset = pd.read_csv('StudentsPerformace.csv') 
 #classifier = pickle.load(pickle_in)
 
 
